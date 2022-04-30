@@ -13,9 +13,10 @@ import javax.servlet.annotation.WebListener;
 
 @WebListener
 public class WebAppListener implements ServletContextListener {
-    PostRepository postRepository;
-    UserRepository userRepository;
-    User adminUser;
+    private PostRepository postRepository;
+    private UserRepository userRepository;
+    private User adminUser;
+    private long postId;
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -26,10 +27,12 @@ public class WebAppListener implements ServletContextListener {
         adminUser.setId("admin");
         adminUser.setPassword("12345");
         adminUser.setName("관리자");
+        postId = 0L;
 
         context.setAttribute("postRepository", postRepository);
         context.setAttribute("userRepository", userRepository);
         context.setAttribute("admin", adminUser);
+        context.setAttribute("postId",postId);
     }
 
     @Override

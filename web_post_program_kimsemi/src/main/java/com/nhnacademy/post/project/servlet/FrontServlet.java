@@ -2,16 +2,19 @@ package com.nhnacademy.post.project.servlet;
 
 import com.nhnacademy.post.project.command.Command;
 import com.nhnacademy.post.project.controller.RemoveUserController;
-import com.nhnacademy.post.project.controller.admin.ModifyUserController;
 import com.nhnacademy.post.project.controller.admin.AddUserController;
-import com.nhnacademy.post.project.controller.login.LoginController;
-import com.nhnacademy.post.project.controller.login.LoginFormController;
+import com.nhnacademy.post.project.controller.admin.ModifyUserController;
+import com.nhnacademy.post.project.controller.admin.ModifyUserFormController;
 import com.nhnacademy.post.project.controller.admin.ProfileController;
 import com.nhnacademy.post.project.controller.admin.ProfileUploadFormController;
 import com.nhnacademy.post.project.controller.admin.UserListController;
+import com.nhnacademy.post.project.controller.login.LoginController;
+import com.nhnacademy.post.project.controller.login.LoginFormController;
 import com.nhnacademy.post.project.controller.login.LoginProcessingController;
-import com.nhnacademy.post.project.controller.admin.ModifyUserFormController;
 import com.nhnacademy.post.project.controller.logout.LogoutController;
+import com.nhnacademy.post.project.controller.user.PostListController;
+import com.nhnacademy.post.project.controller.user.PostingController;
+import com.nhnacademy.post.project.controller.user.PostingFormController;
 import java.io.IOException;
 import java.util.Objects;
 import javax.servlet.RequestDispatcher;
@@ -63,20 +66,26 @@ public class FrontServlet extends HttpServlet {
             command = new LoginFormController();
         } else if ("/userList.do".equalsIgnoreCase(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new UserListController();
-        } else if ("/addUser.do".equals(servletPath) && "POST".equalsIgnoreCase(method)){
+        } else if ("/addUser.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new AddUserController();
-        } else if ("/profileUploadForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+        } else if ("/profileUploadForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new ProfileUploadFormController();
-        } else if ("/profile.do".equals(servletPath) && "POST".equalsIgnoreCase(method)){
+        } else if ("/profile.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new ProfileController();
-        } else if ("/modifyUserForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+        } else if ("/modifyUserForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new ModifyUserFormController();
-        } else if ("/modifyUser.do".equals(servletPath)&&"POST".equalsIgnoreCase(method)){
+        } else if ("/modifyUser.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new ModifyUserController();
-        } else if ("/removeUser.do".equals(servletPath)&&"GET".equalsIgnoreCase(method)){
+        } else if ("/removeUser.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new RemoveUserController();
-        } else if ("/logout.do".equals(servletPath)&&"GET".equalsIgnoreCase(method)){
+        } else if ("/logout.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new LogoutController();
+        } else if ("/postList.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new PostListController();
+        } else if ("/postingForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new PostingFormController();
+        } else if ("/posting.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
+            command = new PostingController();
         }
         return command;
     }

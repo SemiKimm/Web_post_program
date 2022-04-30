@@ -1,6 +1,8 @@
 package com.nhnacademy.post.project.controller.login;
 
 import com.nhnacademy.post.project.command.Command;
+import com.nhnacademy.post.project.domain.Post;
+import com.nhnacademy.post.project.domain.PostRepository;
 import com.nhnacademy.post.project.domain.User;
 import com.nhnacademy.post.project.domain.UserRepository;
 import java.util.List;
@@ -26,7 +28,11 @@ public class LoginController implements Command {
             request.getSession().setAttribute("userList", userList);
             return "redirect:/userList.do";
         } else {
-            return "redirect:/postList.jsp";
+            PostRepository postRepository =
+                (PostRepository) request.getServletContext().getAttribute("postRepository");
+            List<Post> postList = postRepository.getPosts();
+            request.getSession().setAttribute("postList", postList);
+            return "redirect:/postList.do";
         }
     }
 }
