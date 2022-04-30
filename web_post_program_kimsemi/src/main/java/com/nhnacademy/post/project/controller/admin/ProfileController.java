@@ -11,7 +11,7 @@ import javax.servlet.http.Part;
 import lombok.extern.slf4j.Slf4j;
 
 @MultipartConfig(
-    location = "D:\\NHN_Academy\\webPostProgram\\Web_post_program\\web_post_program_kimsemi\\src\\main\\resources",
+    location = "D:\\NHN_Academy\\webPostProgram\\Web_post_program\\web_post_program_kimsemi\\src\\main\\resources", //TODO : 경로수정하기
     maxFileSize = -1L,
     maxRequestSize = -1L,
     fileSizeThreshold = 1024
@@ -28,6 +28,7 @@ public class ProfileController implements Command {
 
                 if (contentDisposition.contains("filename=")) {
                     String fileName = extractFileName(contentDisposition);
+                    request.setAttribute("fileName",fileName);
 
                     if (part.getSize() > 0) {
                         part.write(UPLOAD_DIR + File.separator + fileName);

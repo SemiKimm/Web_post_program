@@ -59,7 +59,7 @@ public class FrontServlet extends HttpServlet {
             command = new LoginFormController();
         } else if ("/userList.do".equalsIgnoreCase(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new UserListController();
-        } else if ("/addUserForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+        } else if ("/addUser.do".equals(servletPath) && "POST".equalsIgnoreCase(method)){
             command = new AddUserFormController();
         } else if ("/profileUploadForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
             command = new ProfileUploadFormController();
