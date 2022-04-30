@@ -10,6 +10,9 @@
     <form method="get" action="http://localhost:8081/profileUploadForm.do">
         <input type="submit" value="사용자 추가">
     </form>
+    <form method="get" action="http://localhost:8081/logout.do">
+        <input type="submit" value="로그아웃"/>
+    </form>
 
     <table style="text-align:center;border-collapse:collapse;border-top:1px solid black;border-bottom:1px solid black">
         <thead>

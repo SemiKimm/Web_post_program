@@ -11,6 +11,7 @@ import com.nhnacademy.post.project.controller.admin.ProfileUploadFormController;
 import com.nhnacademy.post.project.controller.admin.UserListController;
 import com.nhnacademy.post.project.controller.login.LoginProcessingController;
 import com.nhnacademy.post.project.controller.admin.ModifyUserFormController;
+import com.nhnacademy.post.project.controller.logout.LogoutController;
 import java.io.IOException;
 import java.util.Objects;
 import javax.servlet.RequestDispatcher;
@@ -74,6 +75,8 @@ public class FrontServlet extends HttpServlet {
             command = new ModifyUserController();
         } else if ("/removeUser.do".equals(servletPath)&&"GET".equalsIgnoreCase(method)){
             command = new RemoveUserController();
+        } else if ("/logout.do".equals(servletPath)&&"GET".equalsIgnoreCase(method)){
+            command = new LogoutController();
         }
         return command;
     }
