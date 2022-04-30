@@ -11,6 +11,7 @@ public class LoginController implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         //GET
+        //todo: logincheckfilter
         HttpSession session = request.getSession(false);
         if(Objects.isNull(session)||Objects.isNull(session.getAttribute("user"))){
             return "redirect:/loginForm.do";
