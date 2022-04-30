@@ -7,14 +7,14 @@ import java.util.Objects;
 
 public class PostingServiceUserRepository
     implements UserRepository {
-    private final Map<String, User> repository = new HashMap<>();
+    private final Map<String, User> users = new HashMap<>();
 
     @Override
     public void add(User user) {
         if (Objects.isNull(user)) {
             throw new IllegalArgumentException("null");
         }
-        this.repository.put(user.getId(), user);
+        this.users.put(user.getId(), user);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class PostingServiceUserRepository
             throw new IllegalArgumentException();
         }
         User removeUser = getUser(id);
-        getUsers().remove(removeUser);
+        this.users.remove(id);
         return removeUser;
     }
 
@@ -57,6 +57,6 @@ public class PostingServiceUserRepository
 
     @Override
     public List<User> getUsers() {
-        return (List<User>) this.repository.values();
+        return (List<User>) this.users.values();
     }
 }
