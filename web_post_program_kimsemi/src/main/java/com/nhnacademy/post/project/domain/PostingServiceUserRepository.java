@@ -28,6 +28,8 @@ public class PostingServiceUserRepository
             throw new IllegalArgumentException();
         }
         User existUser = getUser(user.getId());
+        // FIXME : 사용자 id 도 바꿀수 있게 해야되나??
+        existUser.setProfileFileName(user.getPassword());
         existUser.setName(user.getName());
         existUser.setProfileFileName(user.getProfileFileName());
     }

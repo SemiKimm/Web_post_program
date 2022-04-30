@@ -31,7 +31,7 @@
             <td style="border: solid darkgrey 1px">${user.getName()}</td>
             <td style="border: solid darkgrey 1px">${user.getProfileFileName()}</td>
             <td style="border: solid darkgrey 1px">
-                <a href="http://localhost:8081/modfiyUserForm.do?uid=${user.getId()}">
+                <a href="http://localhost:8081/modifyUserForm.do?uid=${user.getId()}">
                     <button>수정</button>
                 </a>
             </td>
