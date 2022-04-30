@@ -18,6 +18,8 @@
                 <th>사용자 비밀번호</th>
                 <th>사용자 이름</th>
                 <th>사용자 프로필 사진 파일명</th>
+                <th>사용자 정보 수정</th>
+                <th>사용자 삭제</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +30,16 @@
             <td style="border: solid darkgrey 1px">${user.getPassword()}</td>
             <td style="border: solid darkgrey 1px">${user.getName()}</td>
             <td style="border: solid darkgrey 1px">${user.getProfileFileName()}</td>
+            <td style="border: solid darkgrey 1px">
+                <a href="http://localhost:8081/modfiyUserForm.do?uid=${user.getId()}">
+                    <button>수정</button>
+                </a>
+            </td>
+            <td style="border: solid darkgrey 1px">
+                <a href="http://localhost:8081/removeUser.do?uid=${user.getId()}">
+                    <button>삭제</button>
+                </a>
+            </td>
         </tr>
     </c:forEach>
         </tbody>
