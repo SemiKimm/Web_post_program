@@ -3,6 +3,7 @@ package com.nhnacademy.post.project.servlet;
 import com.nhnacademy.post.project.command.Command;
 import com.nhnacademy.post.project.controller.LoginController;
 import com.nhnacademy.post.project.controller.LoginFormController;
+import com.nhnacademy.post.project.controller.login.LoginProcessingController;
 import java.io.IOException;
 import java.util.Objects;
 import javax.servlet.RequestDispatcher;
@@ -45,9 +46,12 @@ public class FrontServlet extends HttpServlet {
 
     private Command resolveCommand(String servletPath, String method) {
         Command command = null;
-        if("/login.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+        if ("/login.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new LoginController();
-        }else if("/loginForm.do".equalsIgnoreCase(servletPath) && "GET".equalsIgnoreCase(method)){
+        } else if ("/login.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
+            command = new LoginProcessingController();
+        } else if ("/loginForm.do".equalsIgnoreCase(servletPath) &&
+            "GET".equalsIgnoreCase(method)) {
             command = new LoginFormController();
         }
         return command;

@@ -9,7 +9,9 @@ import com.nhnacademy.post.project.domain.UserRepository;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
+@WebListener
 public class WebAppListener implements ServletContextListener {
     PostRepository postRepository;
     UserRepository userRepository;
