@@ -1,4 +1,4 @@
-package com.nhnacademy.post.project.controller;
+package com.nhnacademy.post.project.controller.admin;
 
 import com.nhnacademy.post.project.command.Command;
 import com.nhnacademy.post.project.domain.PostingServiceUser;
