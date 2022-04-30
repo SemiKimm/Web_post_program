@@ -1,12 +1,12 @@
 package com.nhnacademy.post.project.servlet;
 
 import com.nhnacademy.post.project.command.Command;
-import com.nhnacademy.post.project.controller.AddUserFormController;
-import com.nhnacademy.post.project.controller.LoginController;
-import com.nhnacademy.post.project.controller.LoginFormController;
-import com.nhnacademy.post.project.controller.ProfileController;
-import com.nhnacademy.post.project.controller.ProfileUploadFormController;
-import com.nhnacademy.post.project.controller.UserListController;
+import com.nhnacademy.post.project.controller.admin.AddUserFormController;
+import com.nhnacademy.post.project.controller.login.LoginController;
+import com.nhnacademy.post.project.controller.login.LoginFormController;
+import com.nhnacademy.post.project.controller.admin.ProfileController;
+import com.nhnacademy.post.project.controller.admin.ProfileUploadFormController;
+import com.nhnacademy.post.project.controller.admin.UserListController;
 import com.nhnacademy.post.project.controller.login.LoginProcessingController;
 import java.io.IOException;
 import java.util.Objects;
