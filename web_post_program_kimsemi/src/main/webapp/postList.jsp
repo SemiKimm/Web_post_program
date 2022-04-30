@@ -27,7 +27,11 @@
     <c:forEach var="post" items="${postList}">
         <tr style="white-space:nowrap;border-top:1px solid #EFEFEF">
             <td style="border: solid darkgrey 1px">${post.getId()}</td>
-            <td style="border: solid darkgrey 1px">${post.getTitle()}</td>
+            <td style="border: solid darkgrey 1px">
+                <a href="http://localhost:8081/post.do?postId=${post.getId()}">
+                        ${post.getTitle()}
+                </a>
+            </td>
             <td style="border: solid darkgrey 1px">${post.getWriterUserId()}</td>
             <td style="border: solid darkgrey 1px">${post.getWriteTime()}</td>
             <td style="border: solid darkgrey 1px">${post.getViewCount()}</td>

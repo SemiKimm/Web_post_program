@@ -12,6 +12,7 @@ import com.nhnacademy.post.project.controller.login.LoginController;
 import com.nhnacademy.post.project.controller.login.LoginFormController;
 import com.nhnacademy.post.project.controller.login.LoginProcessingController;
 import com.nhnacademy.post.project.controller.logout.LogoutController;
+import com.nhnacademy.post.project.controller.user.PostController;
 import com.nhnacademy.post.project.controller.user.PostListController;
 import com.nhnacademy.post.project.controller.user.PostingController;
 import com.nhnacademy.post.project.controller.user.PostingFormController;
@@ -86,6 +87,8 @@ public class FrontServlet extends HttpServlet {
             command = new PostingFormController();
         } else if ("/posting.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new PostingController();
+        } else if ("/post.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+            command = new PostController();
         }
         return command;
     }
