@@ -1,9 +1,11 @@
 package com.nhnacademy.post.project.domain;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class PostingServiceUserRepository
     implements UserRepository {
@@ -56,6 +58,6 @@ public class PostingServiceUserRepository
 
     @Override
     public List<User> getUsers() {
-        return (List<User>) this.users.values();
+        return new ArrayList<>(this.users.values());
     }
 }

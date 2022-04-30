@@ -57,8 +57,6 @@ public class PostingServicePostRepository
 
     @Override
     public List<Post> getPosts() {
-        List<Post> result = new ArrayList<>();
-        result.addAll(this.posts.values());
-        return result;
+        return new ArrayList<>(this.posts.values());
     }
 }

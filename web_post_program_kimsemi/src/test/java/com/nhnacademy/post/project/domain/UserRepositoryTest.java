@@ -63,6 +63,14 @@ class UserRepositoryTest {
 
     @Test
     void getUsers() {
+        String testId = "semi";
+        User testUser = new PostingServiceUser();
+        testUser.setId(testId);
+        userRepository.add(testUser);
+
+        List<User> result = userRepository.getUsers();
+        assertThat(result)
+            .isNotNull();
         assertThatNoException()
             .isThrownBy(()->userRepository.getUsers());
     }
