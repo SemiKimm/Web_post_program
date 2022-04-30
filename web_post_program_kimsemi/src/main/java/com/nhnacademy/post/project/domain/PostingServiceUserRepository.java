@@ -48,11 +48,10 @@ public class PostingServiceUserRepository
         if(Objects.isNull(id)){
             throw new IllegalArgumentException();
         }
-        List<User> users = getUsers();
-        return users
-            .stream()
-            .filter(user->user.getId().equals(id)).findFirst()
-            .orElse(null);
+        if(Objects.isNull(this.users.get(id))){
+            throw new IllegalArgumentException();
+        }
+        return this.users.get(id);
     }
 
     @Override

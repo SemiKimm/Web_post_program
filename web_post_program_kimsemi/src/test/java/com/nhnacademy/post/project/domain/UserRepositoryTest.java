@@ -1,5 +1,6 @@
 package com.nhnacademy.post.project.domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 import static org.assertj.core.api.Assertions.assertThatNoException;
 import static org.mockito.Mockito.mock;
@@ -38,6 +39,19 @@ class UserRepositoryTest {
         String testId = null;
         assertThatIllegalArgumentException()
             .isThrownBy(() -> userRepository.remove(testId));
+    }
+
+    @Test
+    void getUser(){
+        String testId = "semi";
+        User testUser = new PostingServiceUser();
+        testUser.setId(testId);
+        userRepository.add(testUser);
+
+        User result = userRepository.getUser(testId);
+        assertThat(result)
+            .isNotNull()
+            .isEqualTo(testUser);
     }
 
     @Test
