@@ -1,7 +1,7 @@
 package com.nhnacademy.post.project.servlet;
 
 import com.nhnacademy.post.project.command.Command;
-import com.nhnacademy.post.project.controller.admin.AddUserFormController;
+import com.nhnacademy.post.project.controller.admin.AddUserController;
 import com.nhnacademy.post.project.controller.login.LoginController;
 import com.nhnacademy.post.project.controller.login.LoginFormController;
 import com.nhnacademy.post.project.controller.admin.ProfileController;
@@ -60,7 +60,7 @@ public class FrontServlet extends HttpServlet {
         } else if ("/userList.do".equalsIgnoreCase(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new UserListController();
         } else if ("/addUser.do".equals(servletPath) && "POST".equalsIgnoreCase(method)){
-            command = new AddUserFormController();
+            command = new AddUserController();
         } else if ("/profileUploadForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
             command = new ProfileUploadFormController();
         } else if ("/profile.do".equals(servletPath) && "POST".equalsIgnoreCase(method)){

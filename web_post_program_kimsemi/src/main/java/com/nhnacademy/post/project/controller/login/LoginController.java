@@ -23,8 +23,8 @@ public class LoginController implements Command {
             UserRepository userRepository =
                 (UserRepository) request.getServletContext().getAttribute("userRepository");
             List<User> userList = userRepository.getUsers();
-            request.setAttribute("userList", userList);
-            return "/userList.jsp";
+            request.getSession().setAttribute("userList", userList);
+            return "redirect:/userList.do";
         } else {
             return "redirect:/postList.jsp";
         }

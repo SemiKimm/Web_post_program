@@ -10,7 +10,7 @@
     <form method="get" action="http://localhost:8081/profileUploadForm.do">
         <input type="submit" value="사용자 추가">
     </form>
-    <c:set var="userList" value="${requestScope.userList}"/>
+    <c:set var="userList" value="${sessionScope.userList}"/>
     <c:forEach var="user" items="${userList}">
         ${user.getName()}
     </c:forEach>

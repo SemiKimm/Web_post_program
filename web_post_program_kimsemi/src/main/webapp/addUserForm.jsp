@@ -14,7 +14,7 @@
     <label>이름</label>
     <input type="text" name="name" placeholder="이름을 입력하세요."/><br/>
     <label>프로필 사진</label>
-    <input type="text" name="name" value="${requestScope.fileName}" readonly="readonly"/><br/>
+    <input type="text" name="fileName" value="${requestScope.fileName}" readonly="readonly"/><br/>
     <input type="submit" value="사용자 등록"/>
 </form>
 </body>
