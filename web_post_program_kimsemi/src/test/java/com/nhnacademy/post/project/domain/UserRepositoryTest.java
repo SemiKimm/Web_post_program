@@ -34,20 +34,6 @@ class UserRepositoryTest {
     }
 
     @Test
-    void addAndRemove() {
-        // TODO : 이거 테스트 어케하지
-//        String testId = "semi";
-//        User testUser = new PostingServiceUser();
-//        testUser.setId(testId);
-//        when(testUserRepository.getUser(testId)).thenReturn(testUser);
-//
-//        User result = userRepository.remove(testId);
-//        assertThat(result)
-//            .isNotNull()
-//            .isEqualTo(testUser);
-    }
-
-    @Test
     void remove_idIsNull_throwIllegalArgumentExp() {
         String testId = null;
         assertThatIllegalArgumentException()
