@@ -1,6 +1,7 @@
 package com.nhnacademy.post.project.servlet;
 
 import com.nhnacademy.post.project.command.Command;
+import com.nhnacademy.post.project.controller.RemoveUserController;
 import com.nhnacademy.post.project.controller.admin.ModifyUserController;
 import com.nhnacademy.post.project.controller.admin.AddUserController;
 import com.nhnacademy.post.project.controller.login.LoginController;
@@ -71,6 +72,8 @@ public class FrontServlet extends HttpServlet {
             command = new ModifyUserFormController();
         } else if ("/modifyUser.do".equals(servletPath)&&"POST".equalsIgnoreCase(method)){
             command = new ModifyUserController();
+        } else if ("/removeUser.do".equals(servletPath)&&"GET".equalsIgnoreCase(method)){
+            command = new RemoveUserController();
         }
         return command;
     }
