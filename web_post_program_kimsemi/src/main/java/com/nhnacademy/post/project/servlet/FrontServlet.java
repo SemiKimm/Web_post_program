@@ -1,8 +1,12 @@
 package com.nhnacademy.post.project.servlet;
 
 import com.nhnacademy.post.project.command.Command;
+import com.nhnacademy.post.project.controller.AddUserFormController;
 import com.nhnacademy.post.project.controller.LoginController;
 import com.nhnacademy.post.project.controller.LoginFormController;
+import com.nhnacademy.post.project.controller.ProfileController;
+import com.nhnacademy.post.project.controller.ProfileUploadFormController;
+import com.nhnacademy.post.project.controller.UserListController;
 import com.nhnacademy.post.project.controller.login.LoginProcessingController;
 import java.io.IOException;
 import java.util.Objects;
@@ -53,6 +57,14 @@ public class FrontServlet extends HttpServlet {
         } else if ("/loginForm.do".equalsIgnoreCase(servletPath) &&
             "GET".equalsIgnoreCase(method)) {
             command = new LoginFormController();
+        } else if ("/userList.do".equalsIgnoreCase(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new UserListController();
+        } else if ("/addUserForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+            command = new AddUserFormController();
+        } else if ("/profileUploadForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+            command = new ProfileUploadFormController();
+        } else if ("/profile.do".equals(servletPath) && "POST".equalsIgnoreCase(method)){
+            command = new ProfileController();
         }
         return command;
     }

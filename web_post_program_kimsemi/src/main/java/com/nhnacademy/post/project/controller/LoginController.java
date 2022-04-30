@@ -2,6 +2,8 @@ package com.nhnacademy.post.project.controller;
 
 import com.nhnacademy.post.project.command.Command;
 import com.nhnacademy.post.project.domain.User;
+import com.nhnacademy.post.project.domain.UserRepository;
+import java.util.List;
 import java.util.Objects;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,13 +15,17 @@ public class LoginController implements Command {
         //GET
         //todo: logincheckfilter
         HttpSession session = request.getSession(false);
-        if(Objects.isNull(session)||Objects.isNull(session.getAttribute("user"))){
+        if (Objects.isNull(session) || Objects.isNull(session.getAttribute("user"))) {
             return "redirect:/loginForm.do";
         }
         User user = (User) session.getAttribute("user");
-        if(user.getId().equals("admin")){
-            return "redirect:/userList.jsp";
-        }else{
+        if (user.getId().equals("admin")) {
+            UserRepository userRepository =
+                (UserRepository) request.getServletContext().getAttribute("userRepository");
+            List<User> userList = userRepository.getUsers();
+            request.setAttribute("userList", userList);
+            return "/userList.jsp";
+        } else {
             return "redirect:/postList.jsp";
         }
     }
