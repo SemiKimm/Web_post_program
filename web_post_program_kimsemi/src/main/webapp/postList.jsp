@@ -39,6 +39,11 @@
     </c:forEach>
     </tbody>
 </table>
-
+<footer>
+    <label>방문자 수 : </label>
+    ${applicationScope.counter}
+    <label>로그인 사용자 수 : </label>
+    ${sessionScope.loginUserCounter}
+</footer>
 </body>
 </html>
