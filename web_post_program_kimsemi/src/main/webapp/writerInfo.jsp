@@ -11,7 +11,7 @@
     <div>${writer.getName()}</div>
     <label>작성자 프로필 사진</label>
     <div>
-        <img src="http://localhost:8081/profile?id=${writer.getId()}"/>
+        <img width="50px" height="50px" src="/profile/${writer.getProfileFileName()}"/>
     </div>
 </body>
 </html>

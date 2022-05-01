@@ -11,7 +11,7 @@ import javax.servlet.http.Part;
 import lombok.extern.slf4j.Slf4j;
 
 @MultipartConfig(
-    location = "D:\\NHN_Academy\\webPostProgram\\Web_post_program\\web_post_program_kimsemi\\src\\main\\resources", //TODO : 경로수정하기
+    location = "/src/main/webapp/profile/", //TODO : 경로수정하기
     maxFileSize = -1L,
     maxRequestSize = -1L,
     fileSizeThreshold = 1024
@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ProfileUploadController implements Command {
     private static final String CONTENT_DISPOSITION = "Content-Disposition";
-    private static final String UPLOAD_DIR = "D:\\NHN_Academy\\webPostProgram\\Web_post_program\\web_post_program_kimsemi\\src\\main\\resources";
+    private static final String UPLOAD_DIR = "D:\\NHN_Academy\\webPostProgram\\Web_post_program\\web_post_program_kimsemi\\src\\main\\webapp\\profile";
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         try {
