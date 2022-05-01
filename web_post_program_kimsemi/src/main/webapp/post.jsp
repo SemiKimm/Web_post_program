@@ -9,12 +9,13 @@
     <c:set var="post" value="${requestScope.post}"/>
     <c:set var="user" value="${sessionScope.user}"/>
     <c:if test="${user.getId().equals(post.getWriterUserId())}" var="testResult">
-        <form method="get" action="http://localhost:8081/modifyPostForm.do?postId=${post.getId()}">
-            <input type="submit" value="수정"/>
-        </form>
-        <form method="get" action="http://localhost:8081/removePost.do?postId=${post.getId()}">
-            <input type="submit" value="삭제"/>
-        </form>
+        <a href="http://localhost:8081/modifyPostForm.do?postId=${post.getId()}">
+            <button>수정</button>
+        </a>
+        <br/>
+        <a href="http://localhost:8081/removePost.do?postId=${post.getId()}">
+            <button>삭제</button>
+        </a>
     </c:if>
     <br/>
     <div>

@@ -16,6 +16,7 @@ import com.nhnacademy.post.project.controller.user.PostController;
 import com.nhnacademy.post.project.controller.user.PostListController;
 import com.nhnacademy.post.project.controller.user.PostingController;
 import com.nhnacademy.post.project.controller.user.PostingFormController;
+import com.nhnacademy.post.project.controller.user.RemovePostController;
 import java.io.IOException;
 import java.util.Objects;
 import javax.servlet.RequestDispatcher;
@@ -89,6 +90,8 @@ public class FrontServlet extends HttpServlet {
             command = new PostingController();
         } else if ("/post.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
             command = new PostController();
+        } else if ("/removePost.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+            command = new RemovePostController();
         }
         return command;
     }
