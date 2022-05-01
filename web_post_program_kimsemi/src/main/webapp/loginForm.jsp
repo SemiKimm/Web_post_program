@@ -1,15 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
     <title>PostingService - Login</title>
 </head>
 <body>
+<fmt:setLocale value="${sessionScope.locale}" />
+<fmt:setBundle basename="message" var="message" />
 <form method="post" action="http://localhost:8081/login.do">
-    <label>아이디</label>
-    <input type="text" name="userId" placeholder="아이디를 입력하세요."/>
-    <label>비밀번호</label>
-    <input type="text" name="userPassword" placeholder="비밀번호를 입력하세요."/>
-    <input type="submit" value="로그인"/>
+    <label><fmt:message key="id" bundle="${message}" /></label>
+    <input type="text" name="userId" placeholder="<fmt:message key="pleaseEnterYourID." bundle="${message}" />"/>
+    <label><fmt:message key="password" bundle="${message}" /></label>
+    <input type="text" name="userPassword" placeholder="<fmt:message key="pleaseEnterYourPwd." bundle="${message}" />"/>
+    <input type="submit" value="<fmt:message key="login" bundle="${message}" />"/>
 </form>
 </body>
 </html>
