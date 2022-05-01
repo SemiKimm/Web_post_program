@@ -25,13 +25,13 @@ public class LoginController implements Command {
             UserRepository userRepository =
                 (UserRepository) request.getServletContext().getAttribute("userRepository");
             List<User> userList = userRepository.getUsers();
-            request.getSession().setAttribute("userList", userList);
+            request.getSession(false).setAttribute("userList", userList);
             return "redirect:/userList.do";
         } else {
             PostRepository postRepository =
                 (PostRepository) request.getServletContext().getAttribute("postRepository");
             List<Post> postList = postRepository.getPosts();
-            request.getSession().setAttribute("postList", postList);
+            request.getSession(false).setAttribute("postList", postList);
             return "redirect:/postList.do";
         }
     }

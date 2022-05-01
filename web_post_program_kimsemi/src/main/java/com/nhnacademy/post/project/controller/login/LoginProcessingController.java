@@ -20,10 +20,10 @@ public class LoginProcessingController implements Command {
         if (Objects.nonNull(session)) {
             session.invalidate();
         }
+        session = request.getSession();
 
         User admin = (User) context.getAttribute("admin");
         if (id.equals(admin.getId()) && pwd.equals(admin.getPassword())) {
-            session = request.getSession();
             session.setAttribute("user", admin);
             return "redirect:/login.do";
         }
@@ -34,8 +34,6 @@ public class LoginProcessingController implements Command {
         if (Objects.isNull(user) || !pwd.equals(user.getPassword())) {
             throw new IllegalArgumentException();
         }
-
-        session = request.getSession();
         session.setAttribute("user", user);
         return "redirect:/login.do";
     }

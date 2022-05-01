@@ -1,6 +1,5 @@
 package com.nhnacademy.post.project.listener;
 
-import java.util.Objects;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
