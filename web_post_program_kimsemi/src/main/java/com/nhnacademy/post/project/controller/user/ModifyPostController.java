@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 public class ModifyPostController implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        //fixme:post에서 쿼리스트링이 되나..?
         String queryString = request.getQueryString();
         long postId = Long.parseLong(queryString.split("=")[1]);
 

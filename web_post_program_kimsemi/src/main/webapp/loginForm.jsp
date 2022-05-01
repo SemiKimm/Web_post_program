@@ -7,6 +7,7 @@
 <body>
 <fmt:setLocale value="${sessionScope.locale}" />
 <fmt:setBundle basename="message" var="message" />
+<a href="http://localhost:8081/locale.do">${sessionScope.locale}</a>
 <form method="post" action="http://localhost:8081/login.do">
     <label><fmt:message key="id" bundle="${message}" /></label>
     <input type="text" name="userId" placeholder="<fmt:message key="pleaseEnterYourID." bundle="${message}" />"/>

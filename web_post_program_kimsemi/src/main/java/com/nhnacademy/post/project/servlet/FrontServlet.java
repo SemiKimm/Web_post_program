@@ -1,7 +1,7 @@
 package com.nhnacademy.post.project.servlet;
 
 import com.nhnacademy.post.project.command.Command;
-import com.nhnacademy.post.project.controller.LocaleController;
+import com.nhnacademy.post.project.controller.locale.LocaleController;
 import com.nhnacademy.post.project.controller.admin.AddUserController;
 import com.nhnacademy.post.project.controller.admin.ModifyUserController;
 import com.nhnacademy.post.project.controller.admin.ModifyUserFormController;

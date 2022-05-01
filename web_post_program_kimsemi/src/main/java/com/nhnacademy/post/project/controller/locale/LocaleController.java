@@ -1,4 +1,4 @@
-package com.nhnacademy.post.project.controller;
+package com.nhnacademy.post.project.controller.locale;
 
 import com.nhnacademy.post.project.command.Command;
 import java.net.URI;

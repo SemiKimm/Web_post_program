@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 @WebListener
 @Slf4j
 public class SessionCountListener implements HttpSessionListener {
-    private int sessionCount = 0;
+    private int sessionCount = -2;
 
     @Override
     public void sessionCreated(HttpSessionEvent se) {
