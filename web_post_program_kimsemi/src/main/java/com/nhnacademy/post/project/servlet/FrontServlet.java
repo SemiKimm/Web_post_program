@@ -1,7 +1,7 @@
 package com.nhnacademy.post.project.servlet;
 
 import com.nhnacademy.post.project.command.Command;
-import com.nhnacademy.post.project.controller.RemoveUserController;
+import com.nhnacademy.post.project.controller.admin.RemoveUserController;
 import com.nhnacademy.post.project.controller.admin.AddUserController;
 import com.nhnacademy.post.project.controller.admin.ModifyUserController;
 import com.nhnacademy.post.project.controller.admin.ModifyUserFormController;
