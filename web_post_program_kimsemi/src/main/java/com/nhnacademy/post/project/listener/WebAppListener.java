@@ -27,6 +27,7 @@ public class WebAppListener implements ServletContextListener {
     private UserRepository userRepository;
     private User adminUser;
     private long postId;
+    private String locale;
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -39,10 +40,14 @@ public class WebAppListener implements ServletContextListener {
         adminUser.setName("관리자");
         postId = 0L;
 
+        locale = "ko";
+
         context.setAttribute("postRepository", postRepository);
         context.setAttribute("userRepository", userRepository);
         context.setAttribute("admin", adminUser);
-        context.setAttribute("postId",postId);
+        context.setAttribute("postId", postId);
+
+        context.setAttribute("locale", locale);
 
         SettingUtils.settingCounter(context);
     }

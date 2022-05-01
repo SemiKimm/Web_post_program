@@ -1,12 +1,13 @@
 package com.nhnacademy.post.project.servlet;
 
 import com.nhnacademy.post.project.command.Command;
-import com.nhnacademy.post.project.controller.admin.RemoveUserController;
+import com.nhnacademy.post.project.controller.LocaleController;
 import com.nhnacademy.post.project.controller.admin.AddUserController;
 import com.nhnacademy.post.project.controller.admin.ModifyUserController;
 import com.nhnacademy.post.project.controller.admin.ModifyUserFormController;
 import com.nhnacademy.post.project.controller.admin.ProfileUploadController;
 import com.nhnacademy.post.project.controller.admin.ProfileUploadFormController;
+import com.nhnacademy.post.project.controller.admin.RemoveUserController;
 import com.nhnacademy.post.project.controller.admin.UserListController;
 import com.nhnacademy.post.project.controller.login.LoginController;
 import com.nhnacademy.post.project.controller.login.LoginFormController;
@@ -91,16 +92,18 @@ public class FrontServlet extends HttpServlet {
             command = new PostingFormController();
         } else if ("/posting.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new PostingController();
-        } else if ("/post.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+        } else if ("/post.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new PostController();
-        } else if ("/removePost.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+        } else if ("/removePost.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new RemovePostController();
-        } else if ("/modifyPostForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
+        } else if ("/modifyPostForm.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new ModifyPostFormController();
-        } else if ("/modifyPost.do".equals(servletPath)&&"POST".equalsIgnoreCase(method)){
+        } else if ("/modifyPost.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new ModifyPostController();
-        } else if ("/writerInfo.do".equals(servletPath)&&"GET".equalsIgnoreCase(method)){
+        } else if ("/writerInfo.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new WriterInfoController();
+        } else if ("/locale.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new LocaleController();
         }
         return command;
     }

@@ -14,6 +14,8 @@ public class SessionCountListener implements HttpSessionListener {
     public void sessionCreated(HttpSessionEvent se) {
         sessionCount++;
         se.getSession().setAttribute("loginUserCounter",sessionCount);
+        String locale = (String) se.getSession().getServletContext().getAttribute("locale");
+        se.getSession().setAttribute("locale",locale);
         log.error("session count : {}", this.sessionCount);
     }
 
